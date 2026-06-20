@@ -56,7 +56,7 @@ export default function Navbar() {
               alt="Velina Elite"
               width={140}
               height={44}
-              className="object-contain"
+              className="object-contain [mix-blend-mode:multiply]"
               priority
             />
           </a>
@@ -87,11 +87,11 @@ export default function Navbar() {
         </div>
 
         {/* Actions Bar - Right */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {/* Wishlist */}
           <a
             href="#"
-            className="flex items-center gap-2 bg-[#1c223a] text-white hover:bg-opacity-90 px-4 py-2 rounded-full text-xs font-bold transition-all"
+            className="flex items-center gap-1.5 bg-[#1c223a] text-white hover:bg-opacity-90 px-2.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all"
           >
             <Heart size={14} className="fill-white" />
             <span className="hidden sm:inline">WISHLIST</span>
@@ -100,7 +100,7 @@ export default function Navbar() {
           {/* Login */}
           <a
             href="#"
-            className="flex items-center gap-1.5 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 px-3.5 py-2 rounded-full text-xs font-bold text-zinc-700 transition-all"
+            className="flex items-center gap-1 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 px-2.5 sm:px-3.5 py-2 rounded-full text-xs font-bold text-zinc-700 transition-all"
           >
             <User size={14} />
             <span className="hidden sm:inline">LOGIN</span>
@@ -109,11 +109,11 @@ export default function Navbar() {
           {/* Shopping Bag */}
           <a
             href="#"
-            className="flex items-center gap-2 bg-shajgoj-pink text-white hover:bg-shajgoj-magenta px-4 py-2 rounded-full text-xs font-bold shadow-sm transition-all"
+            className="flex items-center gap-1.5 bg-shajgoj-pink text-white hover:bg-shajgoj-magenta px-2.5 sm:px-4 py-2 rounded-full text-xs font-bold shadow-sm transition-all"
           >
             <ShoppingBag size={14} />
-            <span>BAG</span>
-            <span className="bg-white text-shajgoj-pink px-2 py-0.5 rounded-full text-[10px] font-black leading-none">
+            <span className="hidden sm:inline">BAG</span>
+            <span className="bg-white text-shajgoj-pink px-1.5 py-0.5 rounded-full text-[10px] font-black leading-none">
               0
             </span>
           </a>
