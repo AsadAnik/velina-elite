@@ -30,7 +30,7 @@ export default function PromoBanners() {
   const isAllSelected = selectedItems.facewash && selectedItems.moisturizer && selectedItems.sunscreen;
 
   return (
-    <section className="py-12 bg-white w-full max-w-7xl mx-auto px-4 md:px-6 space-y-16">
+    <section className="py-12 bg-background w-full max-w-7xl mx-auto px-4 md:px-6 space-y-16 transition-colors duration-300">
       
       {/* 1. Large Brand Campaign Banner (Lux Bodywash style) */}
       <div className="w-full rounded-3xl overflow-hidden bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-800 text-white relative shadow-md p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6 min-h-[160px]">
@@ -206,10 +206,10 @@ export default function PromoBanners() {
       <div className="space-y-8">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-[11px] font-black tracking-widest text-zinc-400 uppercase">
+          <h2 className="text-[11px] font-black tracking-widest text-zinc-400 dark:text-zinc-500 uppercase">
             Exclusive Benefits
           </h2>
-          <h3 className="text-xl md:text-2xl font-black text-zinc-900 mt-1 uppercase tracking-wider">
+          <h3 className="text-xl md:text-2xl font-black text-zinc-900 dark:text-zinc-100 mt-1 uppercase tracking-wider">
             Limited Time Offers
           </h3>
           <div className="w-16 h-1 bg-velina-gold mx-auto mt-2 rounded-full"></div>

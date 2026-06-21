@@ -5,11 +5,13 @@ import ConcernCategories from "./components/ConcernCategories";
 import DealsSection from "./components/DealsSection";
 import PromoBanners from "./components/PromoBanners";
 import Footer from "./components/Footer";
-import { ShieldCheck, Award, Sparkles, MessageSquare, ShoppingBag } from "lucide-react";
+import CartDrawer from "./components/CartDrawer";
+import StickyCartWidget from "./components/StickyCartWidget";
+import { ShieldCheck, Award, Sparkles, MessageSquare } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white font-sans selection:bg-velina-rose selection:text-white">
+    <div className="flex flex-col min-h-screen bg-background text-foreground font-sans selection:bg-velina-rose selection:text-white transition-colors duration-300">
       {/* 1. Header / Navigation */}
       <Navbar />
 
@@ -28,7 +30,7 @@ export default function Home() {
         <PromoBanners />
 
         {/* 3. Authenticity / Trust Ribbon (Dark Banner) */}
-        <section className="bg-velina-dark py-8 text-white w-full border-t border-zinc-800">
+        <section className="bg-zinc-900 dark:bg-zinc-950 py-8 text-white w-full border-t border-zinc-800 dark:border-zinc-900/50 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {/* Authenticity Product */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 p-2">
@@ -89,20 +91,8 @@ export default function Home() {
       <Footer />
 
       {/* 5. Sticky Shopping Bag Widget (Hangs on the right side) */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden md:block">
-        <a
-          href="#"
-          className="flex flex-col items-center justify-center bg-velina-rose hover:bg-velina-gold text-white py-3.5 px-3 rounded-l-2xl shadow-xl transition-all hover:pl-4 group"
-        >
-          <ShoppingBag size={20} className="group-hover:scale-110 transition-transform" />
-          <span className="text-[9px] font-black uppercase tracking-widest mt-2 border-t border-white/20 pt-1.5 leading-none">
-            0 ITEMS
-          </span>
-          <span className="text-[10px] font-bold mt-1 text-velina-peach leading-none">
-            ৳ 0
-          </span>
-        </a>
-      </div>
+      <StickyCartWidget />
+      <CartDrawer />
     </div>
   );
 }

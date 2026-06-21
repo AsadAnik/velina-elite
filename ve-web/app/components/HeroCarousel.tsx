@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -89,7 +89,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-zinc-50 h-[380px] md:h-[480px]">
+    <section className="relative w-full overflow-hidden bg-zinc-50 dark:bg-zinc-950 h-[380px] md:h-[480px]">
       {/* Slider Wrapper */}
       <div
         className="w-full h-full flex transition-transform duration-700 ease-in-out"
@@ -217,8 +217,8 @@ export default function HeroCarousel() {
 
                 {/* Shadow overlays */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${slide.align === "left"
-                    ? "from-black/70 via-black/40 to-transparent"
-                    : "from-transparent via-black/40 to-black/70"
+                  ? "from-black/70 via-black/40 to-transparent"
+                  : "from-transparent via-black/40 to-black/70"
                   }`}></div>
 
                 {/* Text overlays */}

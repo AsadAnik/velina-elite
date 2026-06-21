@@ -1,36 +1,70 @@
 @import "tailwindcss";
 
+/* ── Tailwind v4: class-based dark mode ── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Light theme tokens ── */
 :root {
   --background: #ffffff;
+  --surface: #faf8f6;
+  --surface-2: #f4f0ec;
+  --border: #e8e0d8;
+  --border-subtle: #f0ebe5;
   --foreground: #111111;
+  --muted: #6b7280;
+  --muted-subtle: #9ca3af;
+
   --velina-gold: #b38e5d;
   --velina-peach: #fae1d4;
   --velina-rose: #e25c80;
+  --velina-magenta: #c44062;
   --velina-dark: #111111;
   --velina-cream: #faf8f6;
-  
-  /* Fallback aliases for smooth transition */
+
+  /* Fallback aliases */
   --shajgoj-pink: #e25c80;
   --shajgoj-magenta: #c44062;
-  --shajgoj-purple: #111111;
-  --shajgoj-green: #b38e5d;
-  --shajgoj-lime: #fae1d4;
   --shajgoj-dark: #111111;
+}
+
+/* ── Dark theme token overrides ── */
+.dark {
+  --background: #0f0e11;
+  --surface: #18161b;
+  --surface-2: #221f27;
+  --border: #2e2b35;
+  --border-subtle: #252230;
+  --foreground: #f1eef7;
+  --muted: #9e97ac;
+  --muted-subtle: #6b647a;
+
+  --velina-peach: #3a1e2e;
+  --velina-cream: #18161b;
+
+  /* Brand colours remain vivid in dark mode */
+  --velina-gold: #c9a36e;
+  --velina-rose: #e25c80;
+  --velina-magenta: #c44062;
+  --velina-dark: #f1eef7;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-subtle: var(--muted-subtle);
   --color-velina-gold: var(--velina-gold);
   --color-velina-peach: var(--velina-peach);
   --color-velina-rose: var(--velina-rose);
+  --color-velina-magenta: var(--velina-magenta);
   --color-velina-dark: var(--velina-dark);
   --color-velina-cream: var(--velina-cream);
   --color-shajgoj-pink: var(--shajgoj-pink);
   --color-shajgoj-magenta: var(--shajgoj-magenta);
-  --color-shajgoj-purple: var(--shajgoj-purple);
-  --color-shajgoj-green: var(--shajgoj-green);
-  --color-shajgoj-lime: var(--shajgoj-lime);
   --color-shajgoj-dark: var(--shajgoj-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -39,27 +73,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar and aesthetics utilities */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+/* Scrollbar utilities */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Smooth zoom on hover */
-.hover-zoom {
-  transition: transform 0.3s ease-in-out;
-}
-.hover-zoom:hover {
-  transform: scale(1.05);
-}
+/* Zoom on hover */
+.hover-zoom { transition: transform 0.3s ease-in-out; }
+.hover-zoom:hover { transform: scale(1.05); }
 
-/* Shajgoj concern card wavy bottom shape path or style */
-.concern-card-arch {
-  border-radius: 50% 50% 0 0 / 15% 15% 0 0;
-}
-
+/* Arch card shape */
+.concern-card-arch { border-radius: 50% 50% 0 0 / 15% 15% 0 0; }

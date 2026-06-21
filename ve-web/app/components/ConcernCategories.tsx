@@ -38,13 +38,13 @@ export default function ConcernCategories() {
   ];
 
   return (
-    <section className="py-12 bg-white w-full max-w-7xl mx-auto px-4 md:px-6">
+    <section className="py-12 bg-background w-full max-w-7xl mx-auto px-4 md:px-6">
       {/* Section Title */}
       <div className="text-center mb-8">
-        <h2 className="text-xs font-black tracking-widest text-zinc-400 uppercase">
+        <h2 className="text-xs font-black tracking-widest text-zinc-400 dark:text-zinc-500 uppercase">
           Targeted Treatment
         </h2>
-        <h3 className="text-xl md:text-2xl font-black text-zinc-900 mt-1 uppercase tracking-wider">
+        <h3 className="text-xl md:text-2xl font-black text-foreground mt-1 uppercase tracking-wider">
           Shop by Concern
         </h3>
         <div className="w-12 h-1 bg-velina-gold mx-auto mt-2 rounded-full"></div>
@@ -59,7 +59,7 @@ export default function ConcernCategories() {
             className="flex flex-col items-center group relative cursor-pointer"
           >
             {/* The Gold/Yellow container card */}
-            <div className="w-full aspect-[4/5] rounded-3xl bg-zinc-50 border border-zinc-100 flex flex-col justify-between overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1.5">
+            <div className="w-full aspect-[4/5] rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1.5">
               
               {/* Top half: Rounded model portrait */}
               <div className="w-full h-[65%] relative overflow-hidden bg-zinc-200">
