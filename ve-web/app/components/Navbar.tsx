@@ -110,14 +110,14 @@ export default function Navbar() {
 
             <Link
               href="/wishlist"
-              className="flex items-center gap-1.5 bg-[#1c223a] dark:bg-zinc-800 text-white hover:opacity-90 px-2.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all"
+              className="hidden md:flex items-center gap-1.5 bg-[#1c223a] dark:bg-zinc-800 text-white hover:opacity-90 px-2.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all"
             >
               <Heart size={14} className="fill-white" />
               <span className="hidden sm:inline">WISHLIST</span>
             </Link>
             <Link
               href="/auth"
-              className="flex items-center gap-1 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800 px-2.5 sm:px-3.5 py-2 rounded-full text-xs font-bold text-zinc-700 dark:text-zinc-300 transition-all"
+              className="hidden md:flex items-center gap-1 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800 px-2.5 sm:px-3.5 py-2 rounded-full text-xs font-bold text-zinc-700 dark:text-zinc-300 transition-all"
             >
               <User size={14} />
               <span className="hidden sm:inline">LOGIN</span>
