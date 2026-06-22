@@ -7,7 +7,8 @@ import { Search, Heart, User, ShoppingBag, Menu, X, ChevronDown, ChevronRight } 
 import { useStore } from "@/lib/store";
 import { categories } from "@/lib/data";
 import ThemeToggle from "./ThemeToggle";
-import { useTheme } from "@/app/providers";
+
+const BRAND_LOGO = "/1776256116755-removebg-preview.png";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,7 +17,6 @@ export default function Navbar() {
   const [mobileOpenCat, setMobileOpenCat] = useState<string | null>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { cartCount, openCartDrawer } = useStore();
-  const { theme } = useTheme();
 
   const promotionalBadges = [
     { name: "UNDERGARMENTS", href: "#", bg: "bg-blue-600 hover:bg-blue-700 text-white" },
@@ -56,7 +56,7 @@ export default function Navbar() {
         </div>
 
         {/* Main header row */}
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-[5px] flex items-center justify-between gap-3">
           {/* Hamburger (mobile) */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -66,16 +66,17 @@ export default function Navbar() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Logo */}
           <div className="flex items-center gap-4">
-            <Link href="/" className="relative w-36 h-18 flex items-center justify-start">
+            <Link
+              href="/"
+              className="relative block h-12 w-32 shrink-0 overflow-hidden sm:w-36 md:h-14 md:w-44 lg:w-48"
+            >
               <Image
-                src="/1776256116755.png"
-                alt="Velina Elite"
-                width={140}
-                height={44}
-                style={{ mixBlendMode: theme === "dark" ? "screen" : "multiply" }}
-                className="object-contain dark:invert dark:brightness-90 max-h-full"
+                src={BRAND_LOGO}
+                alt="Velina Elite BD"
+                fill
+                sizes="(max-width: 768px) 144px, 192px"
+                className="object-contain object-left origin-left scale-[1.75] md:scale-[2] dark:invert dark:brightness-95 pt-2"
                 priority
               />
             </Link>
@@ -244,14 +245,15 @@ export default function Navbar() {
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
-          <Image
-            src="/1776256116755.png"
-            alt="Velina Elite"
-            width={120}
-            height={38}
-            style={{ mixBlendMode: theme === "dark" ? "screen" : "multiply" }}
-            className="object-contain dark:invert max-h-full"
-          />
+          <Link href="/" className="relative block h-12 w-36 shrink-0 overflow-hidden">
+            <Image
+              src={BRAND_LOGO}
+              alt="Velina Elite BD"
+              fill
+              sizes="144px"
+              className="object-contain object-left origin-left scale-[1.75] dark:invert dark:brightness-95"
+            />
+          </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <button

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/lib/store";
 import { Providers } from "./providers";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +53,10 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Providers>
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+            {children}
+            <WhatsAppButton />
+          </StoreProvider>
         </Providers>
       </body>
     </html>
