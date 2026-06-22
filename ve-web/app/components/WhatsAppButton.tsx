@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 const WHATSAPP_NUMBER = "8801347375533";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
@@ -17,6 +19,9 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
+
   return (
     <div className="fixed bottom-5 right-5 z-50 md:bottom-8 md:right-8">
       <a
